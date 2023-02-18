@@ -2,14 +2,14 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
 	:root {
-		font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+		font-family: "Days One", Avenir, Helvetica, Arial, sans-serif;
 		font-size: 16px;
 		line-height: 24px;
 		font-weight: 400;
 
 		color-scheme: light dark;
-		color: rgba(255, 255, 255, 0.87);
-		background-color: #242424;
+		color: #000;
+		background-color: #fff;
 
 		font-synthesis: none;
 		text-rendering: optimizeLegibility;
@@ -75,6 +75,35 @@ const GlobalStyles = createGlobalStyle`
 			background-color: #f9f9f9;
 		}
 	}
+
+  /**************************/
+  /* CSS Animations Classes */
+  /**************************/
+
+  /* 
+  The following class-endings: *-enter, *-enter-active, *-exit, *-exit-active,
+  have very specific meanings to <CSSTransition />
+  (see more: https://reactcommunity.org/react-transition-group/css-transition)
+  */
+
+  .fade-enter {
+    opacity: 0;
+    z-index: 1;
+  }
+  .fade-enter.fade-enter-active {
+    opacity: 1;
+
+    transition: opacity 250ms ease-out;
+  }
+  .fade-exit {
+    opacity: 1;
+  }
+  .fade-exit.fade-exit-active {
+    opacity: 0;
+
+    transition: opacity 250ms ease-out;
+  }
+
 `;
 
 export default GlobalStyles;
