@@ -3,6 +3,7 @@ import { EstimatedValue } from 'components/EstimatedValue';
 import { ExpencesDynamic } from 'components/ExpencesDynamic';
 import { EmployeesPh } from 'components/EmployeesPh';
 import { YandexReviews } from 'components/YandexReviews';
+import { Chart } from 'components/Chart';
 
 export const Dashboard = () => {
 
@@ -25,6 +26,13 @@ const MyGrid = styled.div`
   grid-auto-flow: row;
   grid-template-rows: repeat(2, 1fr);
   grid-gap: 1rem;
+  
+  > * {
+    transition: transform 0.25s ease;
+  }
+  > *:hover {
+    transform: scale(1.02);
+  }
 `
 
 const EstimatedValuePlaced = styled(EstimatedValue)`
@@ -45,4 +53,8 @@ const EmployeesPhPlaced = styled(EmployeesPh)`
 const YandexReviewPlaced = styled(YandexReviews)`
   grid-column: span 2;
   grid-row: span 1;
+`
+
+const ChartPlaced = styled(Chart)`
+  grid-column: 4;
 `

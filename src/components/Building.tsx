@@ -1,9 +1,9 @@
 import styled from "styled-components"
 
 
-export const Building = () => {
+export const Building = ({className = ""}) => {
   return (
-    <Wrapper>
+    <Wrapper className={className}>
       <Image src="/building.avif"/>
       <Description>
         <div style={{width: "max-content"}}>
@@ -32,6 +32,9 @@ const Wrapper = styled.div`
   border-radius: 1rem;
   background-color: #fff;
   box-shadow: 0 0 1rem 0 rgba(0,0,0,0.25);
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+  
   `
 
 const Image = styled.img`
@@ -40,12 +43,14 @@ const Image = styled.img`
   width: 100%;
   object-fit: cover;
   object-position: center;
+  transform: translateZ(4rem) scale(0.87);
 `
 
 const Description = styled.div`
   display: flex;
   padding: 1rem;
   gap: 6rem;
+  transform: translateZ(4rem) scale(0.87);
 `
 
 const Heading = styled.h3`

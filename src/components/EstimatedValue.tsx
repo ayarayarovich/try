@@ -7,7 +7,7 @@ export const EstimatedValue = ({className = ""}) => {
   return (
     <FlexWrapper className={className}>
       <Chart>
-        <CircleProgress all={100} current={45} strokeColor="#F4C51D"/>
+        <CircleChart all={100} current={87} strokeColor="#F4C51D"/>
       </Chart>
       <StatsBlock>
         <Heading>
@@ -20,7 +20,7 @@ export const EstimatedValue = ({className = ""}) => {
               Выплаты контрагентов
             </Title>
             <Value>
-              12,345 р
+              12,345₽
             </Value>
           </Stat>
           <Stat>
@@ -28,7 +28,7 @@ export const EstimatedValue = ({className = ""}) => {
               Доп. услуги
             </Title>
             <Value>
-              12,345 р
+              12,345₽
             </Value>
           </Stat>
           <Stat>
@@ -36,7 +36,7 @@ export const EstimatedValue = ({className = ""}) => {
               Еще что-то
             </Title>
             <Value>
-              12,345 р
+              12,345₽
             </Value>
           </Stat>
         </StatsList>
@@ -50,6 +50,7 @@ const Chart = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-right: 1rem;
   `
 
 const StatsBlock = styled.div`
@@ -77,4 +78,8 @@ const Title = styled.span`
 
 const Value = styled.span`
     
+`
+
+const CircleChart = styled(CircleProgress)`
+  height: 12rem;
 `

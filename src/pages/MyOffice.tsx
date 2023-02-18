@@ -93,12 +93,12 @@ const GridLink = styled(Link)`
   text-align: center;
 
   background-color: #e8e8e8;
-  transition: all 0.25s ease;
+  transition: transform 0.25s ease;
   color: #000;
 
   &:hover {
     color: inherit;
-    background-color: #cecece;
+    transform: scale(1.02);
   }
 
   > svg {
