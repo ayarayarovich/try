@@ -7,7 +7,7 @@ export const MyOffice = () => {
   return (
     <div>
       <Heading>Мой офис</Heading>
-      <SubHeading>OOO “УК-1”</SubHeading>
+      <SubHeading>OOO “ПАЧКИ”</SubHeading>
 
       <Grid>
           <GridLink to="/">

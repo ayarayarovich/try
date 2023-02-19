@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Link, NavLink, useRoutes } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 export const Topbar = ({className}) => {
   return (
@@ -27,8 +27,6 @@ export const Topbar = ({className}) => {
                 ? "pending"
                 : ""
           } to="/office">Мой офис</NavLink></NavItem>
-          <NotificationsIcon src={'/message-notif.svg'}>
-          </NotificationsIcon>
         </Nav>
     </Wrapper>
   )
@@ -44,10 +42,6 @@ const Nav = styled.nav`
   display: flex;
   align-items: center;
   gap: 3rem;
-`
-
-const NotificationsIcon = styled.img`
-  height: 2rem;
 `
 
 const NavItem = styled.span`

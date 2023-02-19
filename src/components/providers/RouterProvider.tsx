@@ -1,9 +1,10 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import App from "App"
 import { Dashboard } from 'pages/Dashboard';
-import { ManageBuildings } from '../../pages/ManageBuildings';
-import { Error } from '../../pages/Error';
-import { MyOffice } from '../../pages/MyOffice';
+import { ManageBuildings } from 'pages/ManageBuildings';
+import { Error } from 'pages/Error';
+import { MyOffice } from 'pages/MyOffice';
+import { Main } from 'pages/Main';
 
 
 export const router = createBrowserRouter([
@@ -13,11 +14,16 @@ export const router = createBrowserRouter([
     errorElement: <Error/>,
     children: [
       {
+        path: "/",
+        element: <Main/>
+      },
+      {
         path: "/dashboard",
         element: <Dashboard/>
       },
       {
         path: "/administration",
+        // @ts-ignore
         element: <ManageBuildings/>
       },
       {

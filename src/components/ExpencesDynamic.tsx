@@ -42,7 +42,7 @@ export const ExpencesDynamic = ({className = ""}) => {
         }
       },
       series: [{
-        name: 'Moose',
+        name: 'Вода',
         color: "#0080ff",
         marker: {
           enabled: false,
@@ -51,7 +51,7 @@ export const ExpencesDynamic = ({className = ""}) => {
         fillColor: {
           linearGradient: {x1: 0, x2: 0, y1: 0, y2: 1},
           stops: [
-            [0, 'rgb(0,170,255)'],
+            [0, 'rgb(75,195,255)'],
             [1, 'rgba(0, 208, 255, 0)']
           ]
         },
@@ -59,7 +59,46 @@ export const ExpencesDynamic = ({className = ""}) => {
           [
             ...(Array.from(Array(12).keys()).sort((a, b) => 0.5 - Math.random()))
           ]
-      }]
+      },
+        {
+          name: 'Газ',
+          color: "#ff628e",
+          marker: {
+            enabled: false,
+            symbol: 'circle'
+          },
+          fillColor: {
+            linearGradient: {x1: 0, x2: 0, y1: 0, y2: 1},
+            stops: [
+              [0, '#FF628E'],
+              [1, 'rgba(0, 208, 255, 0)']
+            ]
+          },
+          data:
+            [
+              ...(Array.from(Array(12).keys()).sort((a, b) => 0.5 - Math.random()))
+            ]
+        },
+        {
+          name: 'Электричество',
+          color: "#ffd700",
+          marker: {
+            enabled: false,
+            symbol: 'circle'
+          },
+          fillColor: {
+            linearGradient: {x1: 0, x2: 0, y1: 0, y2: 1},
+            stops: [
+              [0, 'rgb(255,231,100)'],
+              [1, 'rgba(0, 208, 255, 0)']
+            ]
+          },
+          data:
+            [
+              ...(Array.from(Array(12).keys()).sort((a, b) => 0.5 - Math.random()))
+            ]
+        }
+      ]
     });
   }, []);
 

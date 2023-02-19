@@ -1,27 +1,37 @@
 import styled from "styled-components"
-import { Building } from 'components/Building';
-import { useEffect } from 'react';
-import {Hover3D} from 'lib/hover3D';
+import {useQuery} from '@tanstack/react-query';
+import { BuildingModal } from '../components/BuildingModal';
 
 export const ManageBuildings = () => {
 
-  useEffect(() => {
-    let my3dHover = new Hover3D('.for-hover-3d')
+  // @ts-ignore
+  const { isLoading, error, data } = useQuery({
+    queryKey: ['buildings'],
+    queryFn: () =>
+      fetch('http://10.2.0.34:8080/get_buildings/1/').then(
+        (res) => res.json(),
+      ),
   })
+
+  if (isLoading) {
+    return <div>Loading...</div>
+  }
+
+  if (error) return 'An error has occurred: ' + (error as any).message;
 
   return (
     <div>
-      <Heading>ООО "УК-1"</Heading>
+      <Heading>ООО "ПАЧКИ"</Heading>
       <SubHeading>Обьекты в пользовании</SubHeading>
-
       <Row>
-        <Building className='for-hover-3d'/>
-        <Building className='for-hover-3d'/>
-        <Building className='for-hover-3d'/>
-        <Building className='for-hover-3d'/>
-        <Building className='for-hover-3d'/>
-        <Building className='for-hover-3d'/>
-        <Building className='for-hover-3d'/>
+        {(data as any).map((b) => {
+          return <BuildingModal
+            address={b.address}
+            id={b.id}
+            name={b.name_build}
+            imageSrc={b.photo_build ? `http://10.2.0.34:8080/${b.photo_build}` : "/building.avif"}
+          />
+        })}
       </Row>
     </div>
   )
@@ -47,5 +57,12 @@ const Row = styled.div`
   scrollbar-width: none; /* Firefox 64 */
   &::-webkit-scrollbar {
     display: none;
+  }
+  
+  > * {
+    transition: transform 0.2s ease;
+  }
+  > *:hover {
+    transform: scale(1.015);
   }
 `
