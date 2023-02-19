@@ -8,7 +8,7 @@ export const ComObject = ({imgSrc, area, rentPrice, description, leaserId, onCli
 
       </LeftSide>
       <RightSide>
-        <Price>{rentPrice} ₽/месяц</Price> <br/>
+        <Price>{rentPrice} ₽/месяц</Price><br/>
         <Little>{area} м&sup2;</Little> <br/>
         <Little>{leaserId ? <span color="rgb(141, 252, 172)">В использовании</span> : <span color="#ff1744">Простаивает</span>}</Little>
       </RightSide>

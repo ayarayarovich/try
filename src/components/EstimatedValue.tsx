@@ -4,18 +4,18 @@ import {FlexWrapper} from 'components/utils';
 import {CircleProgress} from 'components/CircleProgress';
 import { DoubleCircleProgress } from './DoubleCircleProgress';
 import { useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
 
 export const EstimatedValue = ({className = ""}) => {
   const [expence, setExpence] = useState(1);
   const [incomer, setIncomer] = useState(1);
+
   useEffect(() => {
-    fetch(`http://10.2.0.34:8080/get_board/1/`).then(
+    fetch(`http://10.2.0.34:8080/get_incomes/1/`).then(
       (res) => res.json()
     ).then(data => {
       setExpence(Number(data.expence));
       setIncomer(Number(data.incomer));
-      console.log(data.expence);
-      console.log(data.incomer);
     })
   }, [])
 

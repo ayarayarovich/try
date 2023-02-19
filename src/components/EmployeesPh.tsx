@@ -6,21 +6,21 @@ export const EmployeesPh = ({className = ""}) => {
   return (
     <Wrapper className={className}>
       <Heading>
-        Employees P/H
+        Дебеторские задолжености
       </Heading>
 
       <List>
         <ListItem>
-          <Name>A. Mitrovic (наладчик оборудования)</Name>
-          <Hours>26ч (+7)</Hours>
+          <Name>ООО "Ла-Почки"</Name>
+          <Hours>1000000 ₽</Hours>
         </ListItem>
         <ListItem>
-          <Name>E. Mendes (уборщица хз)</Name>
-          <Hours>11ч</Hours>
+          <Name>ИП "ОДРОМ"</Name>
+          <Hours>9509931 ₽</Hours>
         </ListItem>
         <ListItem>
-          <Name>P. Alexandrov (электрик)</Name>
-          <Hours>3ч</Hours>
+          <Name>ООО "СТРОЙИНВЕСТ"</Name>
+          <Hours>84285181 ₽</Hours>
         </ListItem>
       </List>
     </Wrapper>
