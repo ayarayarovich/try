@@ -11,6 +11,7 @@ export const CircleProgress = ({ all, current, className = "", strokeWidth = 15,
         <circle cx="70" cy="70" r={60 - strokeWidth / 2} fill="none" stroke="transparent" strokeWidth={strokeWidth} />
 
         <circle strokeLinecap="round" style={{filter: `drop-shadow(0 0 5px ${strokeColor})`}} className="percent" cx="70" cy="70" r={60 - strokeWidth / 2} fill="none" stroke={strokeColor} strokeDashoffset={100 - percentage} strokeWidth={strokeWidth} strokeDasharray="100" pathLength="100" />
+
       </svg>
     </Wrap>
   )

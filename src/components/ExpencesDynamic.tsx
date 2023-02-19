@@ -8,6 +8,10 @@ export const ExpencesDynamic = ({className = ""}) => {
 
   useEffect(() => {
 
+    fetch(`http://10.2.0.34:8080/get_board/1/`).then(
+      (res) => res.json()
+    ).then((data) =>
+
     // Highchart will be included via CDN
     // @ts-ignore
     new Highcharts.chart(containerRef.current, {
@@ -55,13 +59,10 @@ export const ExpencesDynamic = ({className = ""}) => {
             [1, 'rgba(0, 208, 255, 0)']
           ]
         },
-        data:
-          [
-            ...(Array.from(Array(12).keys()).sort((a, b) => 0.5 - Math.random()))
-          ]
+        data: toArray(`${data.time}`)
       },
         {
-          name: 'Газ',
+          name: 'Отопление',
           color: "#ff628e",
           marker: {
             enabled: false,
@@ -74,10 +75,7 @@ export const ExpencesDynamic = ({className = ""}) => {
               [1, 'rgba(0, 208, 255, 0)']
             ]
           },
-          data:
-            [
-              ...(Array.from(Array(12).keys()).sort((a, b) => 0.5 - Math.random()))
-            ]
+          data: toArray(`${data.heating}`)
         },
         {
           name: 'Электричество',
@@ -93,14 +91,12 @@ export const ExpencesDynamic = ({className = ""}) => {
               [1, 'rgba(0, 208, 255, 0)']
             ]
           },
-          data:
-            [
-              ...(Array.from(Array(12).keys()).sort((a, b) => 0.5 - Math.random()))
-            ]
+          data: toArray(`${data.energy}`)
         }
       ]
-    });
+    }));
   }, []);
+
 
   return (
     <Wrapper className={className}>
@@ -126,3 +122,9 @@ const Badge = styled.span`
   margin-left: 1rem;
 `
 
+
+function toArray(str) {
+  let s = str.slice(1, str.length - 1);
+  let arr = s.split(', ');
+  return arr.map(Number);
+}

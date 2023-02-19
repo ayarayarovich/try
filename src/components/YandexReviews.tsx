@@ -5,7 +5,7 @@ import { CircleProgress } from 'components/CircleProgress';
 export const YandexReviews = ({className = ""}) => {
   return (
     <FlexColumnWrapper className={className}>
-      <CircleProgress current={67} all={100}/>
+      <CircleProgress current={67} all={100} strokeColor="orange"/>
       <TextAlignCenter>Yandex.Review</TextAlignCenter>
     </FlexColumnWrapper>
   )

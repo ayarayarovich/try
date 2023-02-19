@@ -2,41 +2,53 @@ import styled from "styled-components"
 
 import {FlexWrapper} from 'components/utils';
 import {CircleProgress} from 'components/CircleProgress';
+import { DoubleCircleProgress } from './DoubleCircleProgress';
+import { useEffect, useState } from 'react';
 
 export const EstimatedValue = ({className = ""}) => {
+  const [expence, setExpence] = useState(1);
+  const [incomer, setIncomer] = useState(1);
+  useEffect(() => {
+    fetch(`http://10.2.0.34:8080/get_board/1/`).then(
+      (res) => res.json()
+    ).then(data => {
+      setExpence(Number(data.expence));
+      setIncomer(Number(data.incomer));
+      console.log(data.expence);
+      console.log(data.incomer);
+    })
+  }, [])
+
+  const STAT_COLORS = [
+    "hsl(137deg 100% 41%)",
+    "mediumpurple",
+  ]
+
   return (
     <FlexWrapper className={className}>
       <Chart>
-        <CircleChart all={100} current={87} strokeColor="#F4C51D"/>
+        <CircleChart all={incomer + expence} current1={incomer} current2={expence} strokeColor1={STAT_COLORS[0]} strokeColor2={STAT_COLORS[1]}/>
       </Chart>
       <StatsBlock>
         <Heading>
-          Estimated value
+          Доходы/расходы
         </Heading>
 
         <StatsList>
-          <Stat>
+          <Stat style={{color: STAT_COLORS[0]}}>
             <Title>
-              Выплаты контрагентов
+              Доход
             </Title>
             <Value>
-              12,345₽
+              {incomer}₽
             </Value>
           </Stat>
-          <Stat>
+          <Stat style={{color: STAT_COLORS[1]}}>
             <Title>
-              Доп. услуги
+              Расход
             </Title>
             <Value>
-              12,345₽
-            </Value>
-          </Stat>
-          <Stat>
-            <Title>
-              Еще что-то
-            </Title>
-            <Value>
-              12,345₽
+              {expence}₽
             </Value>
           </Stat>
         </StatsList>
@@ -80,6 +92,6 @@ const Value = styled.span`
     
 `
 
-const CircleChart = styled(CircleProgress)`
+const CircleChart = styled(DoubleCircleProgress)`
   height: 12rem;
 `

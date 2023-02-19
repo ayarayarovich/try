@@ -45,7 +45,7 @@ function App() {
 const Wrapper = styled.div`
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1.5rem;
 `;
 
 const TopbarWithMarginBottom = styled(Topbar)`
