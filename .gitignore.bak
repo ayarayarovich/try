@@ -238,24 +238,3 @@ dist
 .env.development
 
 environment.d.ts
-
-
-
-
-# ANDROID_CLIENT
-
-/ANDROID_CLIENT/*.iml
-/ANDROID_CLIENT/.gradle
-/ANDROID_CLIENT/local.properties
-/ANDROID_CLIENT/.idea/caches
-/ANDROID_CLIENT/.idea/libraries
-/ANDROID_CLIENT/.idea/modules.xml
-/ANDROID_CLIENT/.idea/workspace.xml
-/ANDROID_CLIENT/.idea/navEditor.xml
-/ANDROID_CLIENT/.idea/assetWizardSettings.xml
-/ANDROID_CLIENT/.DS_Store
-/ANDROID_CLIENT/build
-/ANDROID_CLIENT/captures
-/ANDROID_CLIENT/.externalNativeBuild
-/ANDROID_CLIENT/.cxx
-/ANDROID_CLIENT/local.properties
