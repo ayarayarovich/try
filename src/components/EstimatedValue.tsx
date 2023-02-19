@@ -27,7 +27,7 @@ export const EstimatedValue = ({className = ""}) => {
   return (
     <FlexWrapper className={className}>
       <Chart>
-        <CircleChart all={incomer + expence} current1={incomer} current2={expence} strokeColor1={STAT_COLORS[0]} strokeColor2={STAT_COLORS[1]}/>
+        <CircleChart all={incomer + expence} current1={incomer} current2={expence} strokeColor1={STAT_COLORS[0]} strokeWidth={20} strokeColor2={STAT_COLORS[1]}/>
       </Chart>
       <StatsBlock>
         <Heading>
@@ -40,7 +40,7 @@ export const EstimatedValue = ({className = ""}) => {
               Доход
             </Title>
             <Value>
-              {incomer}₽
+              {incomer} ₽
             </Value>
           </Stat>
           <Stat style={{color: STAT_COLORS[1]}}>
@@ -48,7 +48,7 @@ export const EstimatedValue = ({className = ""}) => {
               Расход
             </Title>
             <Value>
-              {expence}₽
+              {expence} ₽
             </Value>
           </Stat>
         </StatsList>

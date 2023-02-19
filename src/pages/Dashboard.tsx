@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { EstimatedValue } from 'components/EstimatedValue';
 import { ExpencesDynamic } from 'components/ExpencesDynamic';
 import { EmployeesPh } from 'components/EmployeesPh';
-import { YandexReviews } from 'components/YandexReviews';
+import { Stats } from 'components/Stats';
 import { Chart } from 'components/Chart';
 
 export const Dashboard = () => {
@@ -12,7 +12,7 @@ export const Dashboard = () => {
       <EstimatedValuePlaced/>
       <EmployeesPhPlaced/>
       <ExpencesDynamicPlaced/>
-      <YandexReviewPlaced/>
+      <StatsPlaced/>
     </MyGrid>
   )
 
@@ -50,7 +50,7 @@ const EmployeesPhPlaced = styled(EmployeesPh)`
   grid-row: span 1;
 `
 
-const YandexReviewPlaced = styled(YandexReviews)`
+const StatsPlaced = styled(Stats)`
   grid-column: span 2;
   grid-row: span 1;
 `

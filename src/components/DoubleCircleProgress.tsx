@@ -12,8 +12,8 @@ export const DoubleCircleProgress = ({ all, current1, current2, className = "", 
       <svg width="140" height="140" viewBox="0 0 140 140">
         <circle cx="70" cy="70" r={60 - strokeWidth / 2} fill="none" stroke="transparent" strokeWidth={strokeWidth} />
 
-        <circle strokeLinecap="round" style={{filter: `drop-shadow(0 0 5px ${strokeColor1})`}} className="percent" cx="70" cy="70" r={60 - strokeWidth / 2} fill="none" stroke={strokeColor1} strokeDashoffset={100 - percentage1} strokeWidth={strokeWidth} strokeDasharray="100" pathLength="100" />
-        <circle strokeLinecap="round" style={{filter: `drop-shadow(0 0 5px ${strokeColor2})`}} className="percent" cx="70" cy="70" r={40 - strokeWidth / 2} fill="none" stroke={strokeColor2} strokeDashoffset={100 - percentage2} strokeWidth={strokeWidth} strokeDasharray="100" pathLength="100" />
+        <circle style={{filter: `drop-shadow(0 0 5px ${strokeColor1})`}} className="percent" cx="70" cy="70" r={60 - strokeWidth / 2} fill="none" stroke={strokeColor1} strokeDashoffset={100 - percentage1} strokeWidth={strokeWidth} strokeDasharray="100" pathLength="100" />
+        <circle style={{filter: `drop-shadow(0 0 5px ${strokeColor2})`}} className="percent" cx="70" cy="70" r={60 - strokeWidth / 2} fill="none" stroke={strokeColor2} strokeDashoffset={percentage2 - 100} strokeWidth={strokeWidth} strokeDasharray="100" pathLength="100" />
 
       </svg>
     </Wrap>
