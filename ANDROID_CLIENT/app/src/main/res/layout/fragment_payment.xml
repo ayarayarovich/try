@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.PaymentFragment">
+
+
+    <TextView
+        android:id="@+id/first_header"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:fontFamily="@font/days_one_regular_family"
+        android:text="@string/available_payments"
+
+        android:textSize="18sp"
+        android:textColor="@color/comObjectsHeader"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        android:layout_marginTop="54dp"
+        android:layout_marginStart="23dp"
+        />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+
+        android:layout_width="326dp"
+        android:layout_height="67dp"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/first_header"
+
+        android:background="@drawable/white_rectangle"
+        app:cardCornerRadius="14dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="23dp"
+
+        app:cardElevation="20dp"
+
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/notification_header"
+
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="17dp"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="7sp"
+                android:textColor="@color/comObjectsSubHeader"
+                android:fontFamily="@font/days_one_regular_family"
+
+                android:text="Извещение об оплате электроэнергии"
+
+                />
+
+            <TextView
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="7sp"
+                android:layout_marginRight="36dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/days_one_regular_family"
+                android:textColor="@color/comObjectsAddressHeader"
+
+
+                android:text="@string/company_filler"
+
+                />
+
+            <TextView
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/notification_header"
+
+                android:layout_marginStart="17dp"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="288dp"
+
+                android:textSize="7sp"
+                android:fontFamily="@font/days_one_regular_family"
+                android:textColor="@color/comObjectsAddressHeader"
+                android:lineSpacingExtra="3sp"
+
+                android:text="Счет #201 за потребленную электроэнергию в период с 01.01.2023 по 31.01.2023"
+
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintTop_toBottomOf="@id/card"
+
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

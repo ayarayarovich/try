@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/image_view"
+
+        android:scaleType="fitXY"
+        android:layout_width="333dp"
+        android:layout_height="136dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:translationZ="20dp"
+        app:shapeAppearanceOverlay="@style/rounded_corners_for_pictures"
+
+        />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view_for_text"
+        android:layout_width="333dp"
+        android:layout_height="140dp"
+        app:cardBackgroundColor="@color/white"
+        android:elevation="20dp"
+        android:layout_marginTop="-67dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image_view"
+        app:cardCornerRadius="21dp"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_marginTop="67dp"
+            android:layout_height="60dp"
+            android:layout_width="333dp"
+            >
+
+            <TextView
+                android:id="@+id/header"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="@color/comObjectsHeader"
+                android:textSize="12sp"
+                android:fontFamily="@font/days_one_regular_family"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="9dp"
+                android:text="@string/filler"
+                />
+
+            <TextView
+                android:id="@+id/address_header"
+                app:layout_constraintTop_toBottomOf="@id/header"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="@color/comObjectsAddressHeader"
+                android:textSize="9sp"
+                android:fontFamily="@font/days_one_regular_family"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="9dp"
+                android:text="@string/filler"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/view_expenses_parent"
+        android:layout_width="333dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/card_view_for_text"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <TextView
+            android:id="@+id/view_expenses"
+            android:text="@string/view_commercial_objects"
+            android:textSize="10sp"
+            android:fontFamily="@font/days_one_regular_family"
+            android:textColor="@color/comObjectsSubHeader"
+
+            android:layout_marginTop="7dp"
+            android:layout_marginStart="4dp"
+
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            />
+
+        <ImageView
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:background="@drawable/arrow_right"
+
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="7dp"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/view_expenses"
+            />
+
+        <ImageView
+            android:layout_width="111dp"
+            android:layout_height="1dp"
+            android:background="@drawable/view_expenses_line"
+
+            android:layout_marginTop="-1dp"
+
+            app:layout_constraintTop_toBottomOf="@id/view_expenses"
+            app:layout_constraintStart_toStartOf="@id/view_expenses"
+            />
+
+        <ImageView
+            android:layout_width="122dp"
+            android:layout_height="16dp"
+            android:background="@drawable/view_expenses_black_rect"
+
+            android:layout_marginTop="7dp"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_expenses_parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
